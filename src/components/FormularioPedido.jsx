@@ -31,11 +31,11 @@ export default function FormularioPedido({ producto }) {
 
       // 2. Si guarda con éxito, disparamos la redirección a WhatsApp
       const tuNumeroCelular = "573103826983"; 
-      const mensajeWhatsApp = `¡Hola! Acabo de hacer un pedido por la página web. %0A%0A` +
-        `📦 *Producto:* Ventilador Solar Inteligente ☀️%0A` +
-        `👤 *Nombre:* ${nombre}%0A` +
-        `📞 *Celular:* ${telefono}%0A%0A` +
-        `¡Quedo atento para coordinar los datos de envío contra entrega!`;
+      const mensajeWhatsApp = `¡Hola! Vi el *Ventilador Solar Inteligente* ☀️ en su página de OGP Tecnología y me interesa. %0A%0A` +
+  `Mis datos de contacto son:%0A` +
+  `👤 *Nombre:* ${nombre}%0A` +
+  `📞 *Celular:* ${telefono}%0A%0A` +
+  `Me gustaría recibir más información para coordinar el envío contra entrega.`;
 
       // Abre WhatsApp en una pestaña nueva
       window.open(`https://wa.me/${tuNumeroCelular}?text=${mensajeWhatsApp}`, '_blank');
