@@ -6,6 +6,7 @@ import { createClient } from '@/utils/supabase/client'; // Tu importación origi
 import { FiCheckCircle, FiTag, FiTruck } from 'react-icons/fi';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
+
 export default function FormularioPedido({ producto }) {
   // Inicializamos el cliente de Supabase aquí adentro
   const supabase = createClient();
@@ -37,6 +38,13 @@ export default function FormularioPedido({ producto }) {
   `📞 *Celular:* ${telefono}%0A%0A` +
   `Me gustaría recibir más información para coordinar el envío contra entrega.`;
 
+// Cambia el sendToPixel por esto:
+if (window.fbq) {
+  window.fbq('track', 'Purchase', {
+    value: 180000,
+    currency: 'COP',
+  });
+}
       // Abre WhatsApp en una pestaña nueva
       window.open(`https://wa.me/${tuNumeroCelular}?text=${mensajeWhatsApp}`, '_blank');
 
